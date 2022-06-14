@@ -1,13 +1,13 @@
 {
   "files": {
     "main.css": "/A-match-form-using-React/static/css/main.27a63b4c.css",
-    "main.js": "/A-match-form-using-React/static/js/main.771f41f6.js",
+    "main.js": "/A-match-form-using-React/static/js/main.b983260b.js",
     "index.html": "/A-match-form-using-React/index.html",
     "main.27a63b4c.css.map": "/A-match-form-using-React/static/css/main.27a63b4c.css.map",
-    "main.771f41f6.js.map": "/A-match-form-using-React/static/js/main.771f41f6.js.map"
+    "main.b983260b.js.map": "/A-match-form-using-React/static/js/main.b983260b.js.map"
   },
   "entrypoints": [
     "static/css/main.27a63b4c.css",
-    "static/js/main.771f41f6.js"
+    "static/js/main.b983260b.js"
   ]
 }
