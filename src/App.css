@@ -1,38 +1,296 @@
-.App {
-  text-align: center;
+/* Box sizing rules */
+
+*,
+*::before,
+*::after {
+    box-sizing: border-box;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+
+/* Remove default margin */
+
+body,
+h1,
+h2,
+h3,
+h4,
+p,
+figure,
+blockquote,
+dl,
+dd {
+    margin: 0;
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
+
+/* Remove list styles on ul, ol elements with a list role, which suggests default styling will be removed */
+
+ul[role='list'],
+ol[role='list'] {
+    list-style: none;
 }
 
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
+
+/* Set core root defaults */
+
+html:focus-within {
+    scroll-behavior: smooth;
 }
 
-.App-link {
-  color: #61dafb;
+
+/* Set core body defaults */
+
+body {
+    min-height: 100vh;
+    text-rendering: optimizeSpeed;
+    line-height: 1.5;
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+
+/* A elements that don't have a class get default styles */
+
+a:not([class]) {
+    text-decoration-skip-ink: auto;
+}
+
+
+/* Make images easier to work with */
+
+img,
+picture {
+    max-width: 100%;
+    display: block;
+}
+
+
+/* Inherit fonts for inputs and buttons */
+
+input,
+button,
+textarea,
+select {
+    font: inherit;
+}
+
+
+/* Remove all animations, transitions and smooth scroll for people that prefer not to see them */
+
+@media (prefers-reduced-motion: reduce) {
+    html:focus-within {
+        scroll-behavior: auto;
+    }
+    *,
+    *::before,
+    *::after {
+        animation-duration: 0.01ms !important;
+        animation-iteration-count: 1 !important;
+        transition-duration: 0.01ms !important;
+        scroll-behavior: auto !important;
+    }
+}
+
+
+/* Custom CSS */
+
+body {
+    margin: 0;
+}
+
+#root {
+    width: 90%;
+    margin: 0 auto;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    /* justify-content: space-between; */
+}
+
+.header {
+    padding: 0.5rem 1rem;
+    background: red;
+    color: #FFF;
+}
+
+.header h3 {
+    margin: 0;
+    line-height: 1.3;
+}
+
+form {
+    flex: 1;
+    margin-bottom: 1rem;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+.matchType {
+    margin: 2rem 0;
+}
+
+.matchType h2 {
+    margin-bottom: 1rem;
+}
+
+.friendlyMatchCtn {
+    margin: 2rem 0;
+}
+
+.tournamentMatchCtn {
+    margin: 2rem 0;
+}
+
+.inputs-ctn {
+    margin-top: 1rem;
+    display: grid;
+    column-gap: 20%;
+    row-gap: 1rem;
+    grid-template-columns: 1fr 1fr;
+    grid-area: "startDate endDate""location comments";
+}
+
+.inputs-ctn input {
+    padding: 0.35rem 1rem;
+    max-width: 400px;
+}
+
+#startDate {
+    grid-template-areas: startdate;
+}
+
+#endDate {
+    grid-template-areas: enddate;
+}
+
+#match-location-input {
+    height: max-content;
+    grid-template-areas: location;
+}
+
+#comments {
+    padding: 0.35rem 1rem;
+    grid-template-areas: comments;
+}
+
+.teamsNameCtn {
+    margin: 2rem 0;
+}
+
+.teamsNameCtn h2 {
+    margin-bottom: 1rem;
+}
+
+.team1,
+.team2 {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.team1 input,
+.team2 input {
+    padding: 0.5rem 1rem;
+    max-width: 400px;
+}
+
+.team1 select,
+.team2 select {
+    width: 200px;
+}
+
+.separation-line {
+    text-align: center;
+    margin-block: 3rem;
+}
+
+
+/* Table Styles */
+
+.tableCtn {
+    margin: 2rem 0;
+}
+
+table {
+    border-collapse: collapse;
+    border-spacing: 0;
+    table-layout: fixed;
+    position: relative;
+}
+
+table th {
+    position: sticky;
+    top: 0;
+    z-index: 1;
+    color: #fff;
+    text-align: left;
+    background: red;
+}
+
+table th,
+table td {
+    padding: 0.125rem 1rem;
+    border-right: 1px solid #999;
+}
+
+table td {
+    vertical-align: top;
+}
+
+table tr {
+    border: 1px solid #999;
+}
+
+.table-wrapper {
+    width: 90%;
+    height: 250px;
+    overflow: scroll;
+}
+
+table tbody {
+    height: 50px;
+}
+
+
+/* table tbody .comment-ctn {
+    z-index: -1;
+    height: 150px;
+    overflow-y: scroll;
+} */
+
+table tbody .comment-ctn .comment {
+    /* height: 150px;
+overflow: hidden; */
+}
+
+
+/* Button Styles */
+
+.button-ctn {
+    margin: 2rem 0;
+    display: flex;
+    gap: 1rem;
+    align-items: center;
+    justify-content: flex-end;
+}
+
+button {
+    padding: 0.75em 2em;
+    font-weight: bold;
+    color: #FFF;
+    border: none;
+    cursor: pointer;
+    border-radius: 2px;
+    background: red;
+    transition: all 300ms;
+}
+
+button:hover {
+    box-shadow: 0px 5px 10px rgb(255, 196, 196);
+}
+
+select {
+    padding: 0.5em 1em;
+    border: 1px solid #999;
+    border-radius: 0px;
+    cursor: pointer;
 }
